@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Local Storage</title>
+</head>
+<body>
+        <!-- Inserting and Checking whether data is stored properly or not-->
+
+        <script  type="text/javascript">
+            function store(){
+               var inputEmail= document.getElementById("inputEmail");
+               sessionStorage.setItem("email", inputEmail.value);
+               var Name=document.getElementById("Name");
+               sessionStorage.setItem("name",Name.value);
+               var Message=document.getElementById("Message");
+               sessionStorage.setItem("message",Message.value);
+               var storedValue = sessionStorage.getItem("email");
+               var text = document.createTextNode(storedValue);
+               data.appendChild(text);
+              }
+          </script>
+    <div class="container">
+        <form class="form-signin">
+          <h2 class="form-signin-heading">Please Enter Details</h2>
+          <label for="inputText" class="sr-only">Name</label>
+          <input type="text" id="Name" class="form-control" placeholder="Enter your Name" required autofocus>
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+          <label for="inputText" class="sr-only">Message</label>
+          <input type="text" id="Message" class="form-control" placeholder="Enter your Message" required autofocus>
+          <button class="btn btn-lg btn-primary btn-block"  onclick="store()" type="submit">Store</button>
+        </form>
+    </div>
+    <!-- Checking whether data is stored properly or not-->
+    <div id="data"></div>
+</body>
+</html>
